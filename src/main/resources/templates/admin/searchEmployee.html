@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Search</title>
+	<link rel="stylesheet" href="../../static/css/search.css" th:href="@{/css/search.css}">
+	<link rel="stylesheet" href="../../static/css/searchA.css" th:href="@{/css/search.css}">
+</head>
+<body>
+	<header th:replace="/admin/administrator :: header"></header>
+
+	<section>
+		<div>
+			<h1 id="title">Search User Accounts here</h1>
+		</div>
+
+		<div id="box">
+			<form th:action="@{/searchEmployeeA}" method="GET">
+				<div>Enter employee id:</div>
+				<div><input type="text" name="id">&nbsp;&nbsp;
+				<input type="submit" id="icon01" value="V"></div> <br>
+			</form>
+			
+			<form th:action="@{/searchEmployeeA}" method="GET">
+				<div>Enter employee first name:</div>
+				<div><input type="text" name="firstName">&nbsp;&nbsp;
+				<input type="submit" id="icon01" value="V"></div> <br>
+			</form>
+			
+			<form th:action="@{/searchEmployeeA}" method="GET">
+				<div>Enter employee last name:</div>
+				<div><input type="text" name="lastName">&nbsp;&nbsp;
+				<input type="submit" id="icon01" value="V"></div> <br>
+			</form>
+			
+			<form th:action="@{/searchEmployeeA}" method="GET">
+				<div>Enter employee start date:</div>
+				<div><input type="text" name="id">&nbsp;&nbsp;
+				<input type="submit" id="icon01" value="V"></div> <br>
+			</form>
+		</div>
+
+		<div id="list">
+			<table>
+				<tr id="table-heading">
+					<td>User ID</td>
+					<td>First name</td>
+					<td>Last name</td>
+					<td>Start Date</td>
+					<td>EDIT</td>
+					<td>DELETE</td>
+				</tr>
+				<tr th:each="employee : ${results}">
+					<td id="tb-center" th:text="${employee.employeeId}">100</td>
+					<td id="tb-left" th:text="${employee.firstName}">first name</td>
+					<td id="tb-left" th:text="${employee.lastName}">last name</td>
+					<td id="tb-center" th:text="${employee.startDate}">1234567890</td>
+					<td id="tb-center"><a th:href="@{/editEmployeeA/{id}(id=${employee.employeeId})}"><button id="edit">EDIT</button></a></td>
+					<td id="tb-center"><a th:href="@{/deleteEmployeeA/{id}(id=${employee.employeeId})}"><button id="delete">DELETE</button></a></td>
+				</tr>
+			</table>
+		</div>
+	</section>
+</body>
+</html>

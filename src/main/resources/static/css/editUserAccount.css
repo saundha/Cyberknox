@@ -1,0 +1,43 @@
+@import url('header.css');
+@import url('fonts.css');
+@import url('root.css');
+@import url('editUserProfile.css');
+
+#admin {
+	background-color: aliceblue;
+	box-shadow: 0px 0px 5px aliceblue;
+	color: var(--vivid-purple);
+	pointer-events: none; 
+}
+
+body {
+	background-image: linear-gradient(
+		135deg,
+	    var(--vivid-purple), 
+		var(--vivid-blue));
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
+section {
+	background-color: aliceblue;
+	box-shadow: 0px 0px 50px rgba(85, 85, 85, 0.705);
+	width: 50%;
+	margin: 30px auto;
+	border: none;
+	border-radius: 20px;
+	padding: 50px;
+}
+
+section div h1 {
+	font-size: 250%;
+	color: var(--vivid-purple);
+}
+
+#form-container {
+	width: 100%;
+}
+
+#form-container form {
+	width: 100%;
+}

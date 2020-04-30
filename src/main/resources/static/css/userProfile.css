@@ -1,0 +1,119 @@
+@import url('header.css');
+@import url('fonts.css');
+@import url('root.css');
+
+#profile {
+	background-color: aliceblue;
+	box-shadow: 0px 0px 5px aliceblue;
+	color: var(--vivid-purple);
+}
+
+body {
+	background-image: linear-gradient(
+		135deg,
+	    var(--vivid-purple), 
+		var(--vivid-blue));
+}
+
+section {
+	background-color: aliceblue;
+	width: 40%;
+	margin: 10px auto;
+	border: none;
+	border-radius: 20px;
+	box-shadow: 0px 0px 50px rgba(85, 85, 85, 0.705);
+	padding: 40px;
+}
+
+#after-section {
+	text-align: center;
+}
+
+#after-section h1 {
+	color: var(--vivid-purple);
+	font-size: 300%;
+}
+
+#edit-button {
+	margin-top: 10px;
+}
+
+#edit-button a button {
+	padding: 5px 10px;
+	color: white;
+	background-color: var(--vivid-purple);
+	border: none;
+	border-radius: 10px;
+	font-size: 110%;
+}
+
+#edit-button a button:hover {
+	box-shadow: 0px 0px 7px var(--vivid-purple);
+}
+
+#details {
+	margin: 0 auto;
+	font-size: 130%;
+	margin-top: 30px;
+	text-align: center;
+}
+
+table {
+	margin: 0 auto;
+
+}
+
+table tr {
+	padding: 10px;
+}
+
+table tr td {
+	text-align: left;
+	padding: 10px 0px;
+}
+
+#right {
+	padding-left: 80px;
+}
+
+h1 {
+	color: var(--vivid-purple);
+	font-size: 270%;
+}
+
+#profileEmp {
+	font-size: 120%;
+}
+
+#profileEmp input[type="text"] {
+	border: 2px solid rgb(145, 144, 172);
+	border-radius: 15px;
+	padding: 5px 10px;
+	font-size: 110%;
+	color: var(--text-colour);
+	outline: none;
+	background-color: rgb(232, 241, 247);
+	margin-top: 20px;
+}
+
+#cancel, input[type="submit"] {
+	border-radius: 7px;
+	border: none;
+	color: white;
+	background-color: var(--vivid-purple);
+	padding: 5px 10px;
+}
+
+#cancel:hover, input[type="submit"]:hover {
+	box-shadow: 0px 0px 5px var(--vivid-purple);
+}
+
+#btn-container {
+	margin: 10px;
+	margin-top: 20px;
+	text-align: right;
+}
+
+#main {
+	width: 30%;
+}

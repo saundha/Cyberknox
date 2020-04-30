@@ -1,0 +1,101 @@
+@import url('fonts.css');
+@import url('root.css');
+@import url('header.css');
+
+body {
+	background-image: linear-gradient(
+		135deg,
+	    var(--vivid-purple), 
+		var(--vivid-blue));
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
+header { background-image: none; }
+
+#greet {
+	padding-bottom: 15px;
+}
+
+#welcome {
+	font-size: 250%;
+	padding-left: 30px;
+	color: var(--vivid-purple);
+}
+
+#info {
+	font-size: 150%;
+}
+
+#signup-form {
+	background-color: aliceblue;
+	box-shadow: 0px 0px 50px rgba(85, 85, 85, 0.705);
+	width: 60%;
+	margin: 50px auto 10px auto;
+	border-radius: 30px;
+	padding: 30px;
+}
+
+#main-form {
+	padding: 20px;
+}
+
+table tr td {
+	font-size: 110%;
+	width: 120px;
+	padding-bottom: 10px;
+}
+
+#table2 {
+	float: right;
+	padding-right: 50px;
+}
+
+#table1 {
+	padding-left: 50px;
+}
+
+input[type="text"], input[type="password"],
+input[type="email"], input[type="date"], #gender {
+	border: 2px solid rgb(145, 144, 172);
+	border-radius: 15px;
+	padding: 5px 10px;
+	font-size: 110%;
+	color: var(--text-colour);
+	outline: none;
+	background-color: rgb(232, 241, 247);
+}
+
+#submit-container {
+	padding: 15px 50px 10px 0px;
+}
+
+input[type="submit"], #reset-btn {
+	float: right;
+	border: none;
+	background-image: linear-gradient(
+		135deg,
+	    var(--vivid-purple), 
+		var(--vivid-blue));
+	font-family: 'product sans';
+	font-size: 120%;
+	padding: 8px 20px;
+	color: white;
+	border-radius: 50px;
+	transition: 0.4s;
+	margin-left: 20px;
+}
+
+input[type="submit"]:hover {
+	background-image: linear-gradient(aliceblue, aliceblue);
+	box-shadow: 0px 0px 10px var(--vivid-green);
+	color: var(--vivid-green);
+	transition: 0.4s;
+}
+
+#reset-btn:hover {
+	background-image: linear-gradient(aliceblue, aliceblue);
+	box-shadow: 0px 0px 10px var(--vivid-red);
+	color: var(--vivid-red);
+	transition: 0.4s;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="../../static/css/userAccountList.css" th:href="@{/css/userAccountList.css}">
+</head>
+<body>
+	<header th:replace="employee/employee.html :: empheader"></header>
+
+	<div id="table-container">
+		<table>
+			<tr id="table-heading">
+				<td>User ID</td>
+				<td>First name</td>
+				<td>Last name</td>
+				<td>Account number</td>
+				<td>DETAILS</td>
+				<td>EDIT</td>
+			</tr>
+			<tr th:each="user : ${userAccounts}">
+				<td id="tb-center" th:text="${user.userAccountId}">100</td>
+				<td id="tb-left" th:text="${user.firstName}">first name</td>
+				<td id="tb-left" th:text="${user.lastName}">last name</td>
+				<td id="tb-center" th:text="${user.accountNumber}">1234567890</td>
+				<td id="tb-center"><a th:href="@{/userAccountDetailsE/{id}(id=${user.userAccountId})}"><button id="details">DETAILS</button></a></td>
+				<td id="tb-center"><a th:href="@{/editUserAccountE/{id}(id=${user.userAccountId})}"><button id="edit">EDIT</button></a></td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>

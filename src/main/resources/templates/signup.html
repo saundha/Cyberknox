@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>SIGN UP</title>
+    <link rel="stylesheet" href="../static/css/signup.css" th:href="@{/css/signup.css}">
+</head>
+<body>
+	<header th:replace="home.html :: homeheader">
+		<!-- DELETE AFTER -->
+		<div class="container">
+			<div id="bank-title">
+				<span>Bank Name</span>
+			</div>
+			<div>
+				<ul id="header-list">
+					<a href="/home.html" th:href="@{/}"><li><span id="icon02">I</span> Home</li></a>
+					<a href="/administrator.html" th:href="@{/administrator}"><li><span id="icon02">A</span> Enter Administrator Mode</li></a>
+				</ul>
+			</div>
+			<div id="log-sign-header">
+				<a href="#" th:href="@{/login.html}"><button>Login</button></a>
+				<a href="#" th:href="@{/signup.html}"><button>Sign up</button></a>
+			</div>
+		</div>
+	</header>
+
+	<section id="signup-form">
+		<div id="greet">
+			<span id="welcome">Let's get started! </span>
+			<span id="info"> Enter user's information below:</span>
+		</div>
+		<form action="/processSignUp" th:object="${userAccount}" method="POST" id="main-form">
+			<table id="table2">
+				<tr>
+					<td>Age :</td>
+					<td><input type="text" th:field="*{age}" name="age"></td>
+				</tr>
+				<tr>
+					<td>Email :</td>
+					<td><input type="email" th:field="*{email}" name="email"></td>
+				</tr>
+				<tr>
+					<td>Sin Number :</td>
+					<td><input type="text" th:field="*{sinNumber}" name="sinNumber"></td>
+				</tr>
+				<tr>
+					<td>Username: </td>
+					<td><input type="text" name="username"></td>
+				</tr>
+				<tr>
+					<td>Password: </td>
+					<td><input type="password" name="password"></td>
+				</tr>
+			</table>
+			<table id="table1">
+				<tr>
+					<td>First name: </td>
+					<td><input type="text" th:field="*{firstName}" name="firstName"></td>
+				</tr>
+				<tr>
+					<td>Last name: </td>
+					<td><input type="text" th:field="*{lastName}" name="lastName"></td>
+				</tr>
+				<tr>
+					<td>Date of Birth: </td>
+					<td><input type="date" th:field="*{dateOfBirth}" name="dateOfBirth" placeholder="dd/mm/yyyy"></td>
+				</tr>
+				<tr>
+					<td>Address: </td>
+					<td><input type="text" th:field="*{address}" name="address"></td>
+				</tr>
+				<tr>
+					<td>Phone number: </td>
+					<td><input type="text" th:field="*{number}" name="number"></td>
+				</tr>
+				<tr>
+					<td>Gender: </td>
+					<td><select th:field="*{gender}" name="gender" id="gender">
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+					</select></td>
+				</tr>
+			</table>
+			<div id="submit-container">
+				<input type="submit" value="Sign up">
+				<button id="reset-btn" onclick="window.location.reload()">Reset</button>
+			</div>
+		</form>
+	</section>
+	
+</body>
+</html>	

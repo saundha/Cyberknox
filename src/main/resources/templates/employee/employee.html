@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Employee Home Page</title>
+	<link rel="stylesheet" href="../../static/css/employee.css" th:href="@{/css/employee.css}">
+</head>
+<body>
+	<header th:fragment="empheader">
+		<div class="container">
+			<div id="bank-title">
+				<a th:href="@{/}">Cyber Knox</a>
+			</div>
+			<div>
+				<ul id="header-list">
+					<a th:href="@{logout}"><li><span id="icon02">J</span> Logout</li></a>
+					<a th:href="@{/}"><li id="home"><span id="icon02">I</span> Home</li></a>
+					<a th:href="@{/employee}"><li id="employee"><span id="icon01">s</span> Employee</li></a>
+					<a th:href="@{/administrator}"><li id="admin"><span id="icon02">A</span> Enter Administrator Mode</li></a>
+					<a th:href="@{/employeeProfile}"><li id="profile"><span id="icon01">s</span> Profile</li></a>
+				</ul>
+			</div>
+			<div id="log-sign-header">
+				<a th:href="@{/login}"><button>Login</button></a>
+				<a th:href="@{/signup}"><button>Sign up</button></a>
+			</div>
+		</div>
+	</header>
+
+	<section>
+		<div>
+			<h1>Hello <span th:text="${username}">Username</span></h1>
+		</div>
+		<div id="features">
+			<a th:href="@{/searchUserAccountE}"><button>Search Users</button></a>
+			<a th:href="@{/userAccountListE}"><button>User Accounts</button></a>
+			<a th:href="@{/estatementListE}"><button>E-Statements</button></a>
+		</div>
+	</section>	
+</body>
+</html>

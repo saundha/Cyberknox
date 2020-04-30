@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Edit User Account</title>
+		<link rel="stylesheet" href="../../static/css/editUserAccount.css" th:href="@{/css/editUserAccount.css}">
+</head>
+<body>
+	<header th:replace="employee/employee.html :: empheader"></header>
+
+	<section>
+		<div><h1>Edit <span th:text="${userAccount.firstName} +' '+ ${userAccount.lastName}">full name</span></h1></div>
+		<div id="form-container">
+			<form th:action="@{/processEditUserAccountE}" method="GET" th:object="${userAccount}">
+				<table>
+						<input type="hidden" th:field="*{userAccountId}">
+						<input type="hidden" th:field="*{accountNumber}">
+						<input type="hidden" th:field="*{debitCardId}">
+						<input type="hidden" th:field="*{creditCardId}">
+						<tr>
+							<td>First name: </td>
+							<td id="right"><input type="text" th:field="*{firstName}"></td>
+						</tr>
+						<tr>
+							<td>Last name: </td>
+							<td id="right"><input type="text" th:field="*{lastName}"></td>
+						</tr>
+						<tr>
+							<td>Address: </td>
+							<td id="right"><input type="text" th:field="*{address}"></td>
+						</tr>
+						<tr>
+							<td>Date of Birth: </td>
+							<td id="right"><input type="text" th:field="*{dateOfBirth}"></td>
+						</tr>
+						<tr>
+							<td>Gender: </td>
+							<td id="right">
+								<select th:field="*{gender}" id="gender">
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>Phone number: </td>
+							<td id="right"><input type="text" th:field="*{number}"></td>
+						</tr>
+						<tr>
+							<td>Email: </td>
+							<td id="right"><input type="text" th:field="*{email}"></td>
+						</tr>
+						<tr>
+							<td>Age: </td>
+							<td id="right"><input type="text" th:field="*{age}"></td>
+						</tr>
+						<tr>
+							<td>SIN number:</td>
+							<td id="right"><input type="text" th:field="*{SinNumber}"></td>
+						</tr>
+					</table>
+					<div id="submit-container">
+						<button id="reset-btn" onclick="window.location.reload()">Cancel</button>
+						<input type="submit" value="Confirm">
+					</div>
+			</form>
+		</div>
+	</section>
+
+</body>
+</html>

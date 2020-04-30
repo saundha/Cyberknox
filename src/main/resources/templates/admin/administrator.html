@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>ADMINISTRATOR MODE</title>
+		<link rel="stylesheet" href="../../static/css/administrator.css" th:href="@{/css/administrator.css}">
+</head>
+<body>
+	<header th:fragment="header">
+		<div class="container">
+			<div id="bank-title">
+				<a th:href="@{/}">Cyber Knox</a>
+			</div>
+			<div>
+				<ul id="header-list">
+					<a th:href="@{logout}"><li><span id="icon02">J</span> Logout</li></a>
+					<a th:href="@{/}"><li id="home"><span id="icon02">I</span> Home</li></a>
+					<a th:href="@{/administrator}"><li id="admin"><span id="icon02">A</span> Enter Administrator Mode</li></a>
+				</ul>
+			</div>
+			<div id="log-sign-header">
+				<a th:href="@{/login}"><button>Login</button></a>
+				<a th:href="@{/signup}"><button>Sign up</button></a>
+			</div>
+		</div>
+	</header>
+
+	<section>
+		<div>
+			<h1>Hello Administrator <span th:text="${username}">Username</span></h1>
+		</div>
+		<div id="features">
+			<a th:href="@{searchUserAccountA}"><button>Search Users</button></a>
+			<a th:href="@{userAccountListA}"><button>User Accounts</button></a> <br>
+			<a th:href="@{searchEmployeeA}"><button>Search Employees</button></a>
+			<a th:href="@{employeeListA}"><button>Employees</button></a>
+			<a th:href="@{hireEmployeeA}"><button>Hire Employee</button></a> <br>
+			<a th:href="@{estatementListA}"><button>E-Statements</button></a>
+			<a th:href="@{logListA}"><button>Logs</button></a>
+		</div>
+	</section>
+</body>
+</html>

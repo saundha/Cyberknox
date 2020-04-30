@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<link rel="stylesheet" href="../static/css/receipt.css" th:href="@{/css/receipt.css}">
+</head>
+<body>
+	<div id="container">
+		<h1 th:text="${receipt.getBankName()}">The Cyber Knox</h1>
+		<h2 th:text="${receipt.getAddress()}"> Address sample sample sample sample</h2> <br>		
+		<h2>Your Receipt</h2>
+
+		<table>
+			<tr>
+				<td>Reference Number:</td>
+				<td th:text="${receipt.getReference()}">sample</td>
+			</tr>
+			<tr>
+				<td>Card Number:</td>
+				<td th:text="${receipt.getCardNumber()}">sample</td>
+			</tr>
+			<tr>
+				<td>Amount (dollars):</td>
+				<td th:text="${receipt.getAmount()}">sample</td>
+			</tr>
+			<tr>
+				<td>Balance (updated):</td>
+				<td th:text="${receipt.getAccountBalance()}">sample</td>
+			</tr>		
+		</table>
+
+		<div id="go-back">
+			<a href="#" th:href="@{/account}"><button type="button">Go Back</button></a>
+		</div>	
+		
+	</div>
+</body>
+</html>

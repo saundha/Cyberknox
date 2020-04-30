@@ -1,0 +1,40 @@
+@font-face {
+	font-family: 'product sans light';
+	src: url('../font/ProductSans-Light.ttf');
+}
+
+@font-face {
+	font-family: 'nunito light';
+	src: url('../font/NunitoSans-Light.ttf');
+}
+
+@font-face {
+	font-family: 'product sans';
+	src: url('../font/ProductSans-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'open sans';
+	src: url('../font/OpenSans-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'material icons 01';
+	src: url('../font/Material icons  01.ttf');
+}
+
+@font-face {
+	font-family: 'material icons 2';
+	src: url('../font/Material 2.ttf');
+}
+
+@font-face {
+	font-family: 'material icons 02';
+	src: url('../font/Material icons 02.otf');
+}
+
+#icon01 { font-family: 'material icons 01'; }
+
+#icon02 { font-family: 'material icons 02'; }
+
+#icon2 { font-family: 'material icons 2'; }

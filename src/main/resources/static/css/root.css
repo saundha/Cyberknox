@@ -1,0 +1,32 @@
+:root {
+    /* COLOURS */
+    --green: #00E691;
+    --text-colour:#49505c;
+    --vivid-blue: rgb(80, 145, 248);
+    --vivid-green: rgb(49, 209, 49);
+    --vivid-nevy: #0c3b50;
+    --vivid-purple: #651FFF;
+    --vivid-red: #EC283F;
+    --vivid-sky-blue: #30CCCE;
+    --vivid-teal: #00FFDD;
+}
+
+body {
+	color: var(--text-colour);
+    font-family: 'product sans';
+    background-color: aliceblue;
+    background: no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+header { background-image: none; }
+
+* {
+    transition: 0.3s;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+    list-style: none;
+    outline: none;
+}

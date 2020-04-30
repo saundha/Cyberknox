@@ -1,0 +1,85 @@
+@import url('fonts.css');
+@import url('root.css');
+
+header {
+	background-image: linear-gradient(
+		135deg,
+	    var(--vivid-purple), 
+		var(--vivid-blue));
+	color: white;
+	width: 100%;
+	height: 80px;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	height: 100%;
+}
+
+#bank-title {
+	font-size: 230%;
+	margin: auto;
+	margin-top: 20px;
+}
+
+#bank-title a {
+	color: white;
+}
+
+#header-list {
+	margin: auto;
+	height: 100%;
+	float: right;
+}
+
+#header-list a {
+	display: table;
+	float: left;
+	height: 80%;
+	padding: 0px 10px;
+	font-size: 120%;
+	color: white;
+	padding-top: 20px;
+	outline: none;
+}
+
+#header-list a li {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0 15px;
+	border-radius: 10px;
+}
+
+#header-list a li:hover {
+	background-color: rgba(149, 168, 235, 0.267);  
+	box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.205);
+}
+
+#log-sign-header {
+	height: 100%;
+	padding-right: 45px;
+}
+
+#log-sign-header a {
+	outline: none;
+}
+
+#log-sign-header button {
+	border: 2px solid aliceblue;
+	background-color: #4579F5;
+	font-family: 'product sans';
+	font-size: 120%;
+	color: white;
+	padding: 8px 18px;
+	margin-top: 20px;
+	border-radius: 20px;
+	float: right;
+	margin-right: 20px;
+}
+
+#log-sign-header button:hover {
+	background-color: aliceblue;
+	box-shadow: 0px 0px 5px aliceblue;
+	color: var(--vivid-purple);
+}

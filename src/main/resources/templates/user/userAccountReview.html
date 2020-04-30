@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Account Information</title>
+	<link rel="stylesheet" href="../../static/css/userAccountReview.css" th:href="@{/css/userAccountReview.css}">
+</head>
+<body>
+	<header th:fragment="header">
+		<div class="container">
+			<div id="bank-title">
+				<ath:href="@{/}">Cyber Knox</a>
+			</div>
+			<div>
+				<ul id="header-list">
+					<a th:href="@{/}"><li id="home"><span id="icon02">I</span> Home</li></a>
+					<a th:href="@{/account}"><li id="address" class="noHover"><span id="icon02">h</span> Account</li></a>
+					<a th:href="@{/profile}"><li id="profile"><span id="icon01">s</span> Profile</li></a>
+				</ul>
+			</div>
+			<div id="log-sign-header">
+				<a th:href="@{/login.html}"><button>Login</button></a>
+				<a th:href="@{/signup.html}"><button>Sign up</button></a>
+			</div>
+		</div>
+	</header>
+
+</body>
+</html>

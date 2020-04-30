@@ -1,0 +1,246 @@
+@import url('header.css');
+@import url('fonts.css');
+@import url('root.css');
+
+#account {
+	background-color: aliceblue;
+	box-shadow: 0px 0px 5px aliceblue;
+	color: var(--vivid-purple);
+	pointer-events: none; 
+}
+
+body {
+	background-image: linear-gradient(
+		135deg,
+	    var(--vivid-purple), 
+		var(--vivid-blue));
+}
+
+section {
+	background-color: aliceblue;
+	width: 80%;
+	margin: 10px auto;
+	border: none;
+	border-radius: 20px;
+	box-shadow: 0px 0px 50px rgba(85, 85, 85, 0.705);
+	padding: 20px;
+}
+
+#show,#hide {
+	float: right;
+	border: none;
+	border-radius: 10px;
+	padding: 5px 10px;
+	font-size: 80%;
+	background-color: var(--vivid-blue);
+	color: white;
+}
+
+#show:hover {
+	box-shadow: 0px 0px 10px var(--vivid-blue);
+}
+
+#hide:hover {
+	background-color: white;
+	color: rgb(117, 170, 255);
+	box-shadow: 0px 0px 15px aliceblue;
+}
+
+#debit, #credit {
+	width: 80%;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 110%;
+	margin-bottom: 20px;
+	background-color: rgb(230, 237, 243);
+	border-bottom: 3px solid var(--vivid-blue);
+}
+
+#debit-container, #credit-container {
+	padding: 10px 20px;
+	font-size: 120%;
+}
+
+#debit-info, #credit-info {
+	display: none;
+	padding: 10px 20px;
+	background-color: var(--vivid-blue);
+	color: white;
+	width: 90%;
+	margin: 0px auto;
+	border-radius: 5px;
+}
+
+#balance {
+	font-size: 150%;
+}
+
+.feature-btn {
+	border: none;
+	border-radius: 10px;
+	padding: 8px 16px;
+	color: var(--vivid-blue);
+	background-color: white;
+	font-size: 90%;
+	margin: 10px 10px 20px 0px;  
+}
+
+.feature-btn:hover {
+	color: var(--vivid-blue);
+	background-color: white;
+	box-shadow: 0px 0px 10px white;
+}
+
+#interac {
+	color: var(--green);
+}
+
+#interac:hover {
+	background-color: var(--vivid-green);
+	color: white;
+	box-shadow: 0px 0px 0px white;
+}
+
+#transactions {
+	background-color: #699CF5;
+	padding: 15px 20px 15px 20px;
+	border-radius: 10px;
+	color: white;
+}
+
+#transaction {
+	font-size: 110%;
+}
+
+#interac-popup, #deposit-popup, #withdraw-popup {
+	background: rgba(0, 0, 0, 0.9);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+#interac-popup {
+	display: none;
+}
+
+#deposit-popup {
+	display: none;
+}
+
+#withdraw-popup {
+	display: none;
+}
+
+#interac-container, #deposit-container, #withdraw-container {
+	position: relative;
+	padding: 20px;
+	box-shadow: 0px 0px 15px rgb(63, 63, 63);
+	border-radius: 6px;
+	height: 240px;
+	width: 350px;
+	background: white;
+	color: var(--text-colour);
+}
+
+#interac-container h1, 
+#deposit-container h1, 
+#withdraw-container h1 {
+	font-family: 'nunito light';
+	color: var(--vivid-blue);
+	margin-bottom: 20px;
+}
+
+#interac-container form #form-table {
+	margin: 0 auto;
+}
+
+#interac-container form #form-table tr #txt {
+	text-align: left;
+	padding-right: 10px;
+}
+
+#interac-container form #form-table tr td input[type="text"] {
+	border: none;
+	border-radius: 5px;
+	background-color: rgb(242, 244, 247);
+	font-size: 110%;
+	padding: 5px 10px;
+	color: var(--text-colour);
+}
+
+#interac-container form div input[type="submit"],
+#interac-container form div button {
+	padding: 5px 10px;
+	font-size: 90%;
+	color: var(--vivid-green);
+	border: none;
+	border-radius: 5px;
+	background-color: rgb(242, 244, 247);
+}
+
+#interac-container form div button {
+	color: var(--vivid-red);
+	margin-top: 30px;
+}
+
+#interac-container form div input[type="submit"]:hover {
+	background-color: var(--vivid-green);
+	color: white;
+	box-shadow: 0px 0px 5px var(--green);
+}
+
+#interac-container form div button:hover {
+	background-color: var(--vivid-red);
+	color: white;
+	box-shadow: 0px 0px 5px var(--vivid-red);
+}
+
+#deposit-container input[type="text"], 
+#withdraw-container input[type="text"] {
+    border: none;
+	border-radius: 5px;
+	background-color: rgb(242, 244, 247);
+	font-size: 110%;
+	padding: 5px 10px;
+	color: var(--text-colour);
+}
+
+#deposit-container form div input[type="submit"],
+#deposit-container form div button,
+#withdraw-container form div input[type="submit"],
+#withdraw-container form div button {
+	padding: 5px 10px;
+	font-size: 90%;
+	color: var(--vivid-green);
+	border: none;
+	border-radius: 5px;
+	background-color: rgb(242, 244, 247);
+}
+
+#withdraw-container form div button,
+#deposit-container form div button {
+	color: var(--vivid-red);
+	margin-top: 30px;
+}
+
+#deposit-container form div button:hover,
+#withdraw-container form div button:hover {
+	background-color: var(--vivid-red);
+	color: white;
+	box-shadow: 0px 0px 5px var(--vivid-red);
+} 
+
+#deposit-container form div input[type="submit"]:hover,
+#withdraw-container form div input[type="submit"]:hover {
+	background-color: var(--vivid-green);
+	color: white;
+	box-shadow: 0px 0px 5px var(--green);
+}
+
+#deposit-container, #withdraw-container {
+	height: 200px;
+}

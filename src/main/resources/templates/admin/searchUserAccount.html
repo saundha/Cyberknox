@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Search</title>
+	<link rel="stylesheet" href="../../static/css/search.css" th:href="@{/css/search.css}">
+	<link rel="stylesheet" href="../../static/css/searchA.css" th:href="@{/css/search.css}">
+</head>
+<body>
+	<header th:replace="/admin/administrator :: header"></header>
+
+	<section>
+		<div>
+			<h1 id="title">Search User Accounts here</h1>
+		</div>
+
+		<div id="box">
+			<form th:action="@{/searchUserAccountA}" method="GET">
+				<div>Enter user account id:</div>
+				<div><input type="text" name="id">&nbsp;&nbsp;
+				<input type="submit" id="icon01" value="V"></div> <br>
+			</form>
+			
+			<form th:action="@{/searchUserAccountA}" method="GET">
+				<div>Enter user first name:</div>
+				<div><input type="text" name="firstName">&nbsp;&nbsp;
+				<input type="submit" id="icon01" value="V"></div> <br>
+			</form>
+			
+			<form th:action="@{/searchUserAccountA}" method="GET">
+				<div>Enter user last name:</div>
+				<div><input type="text" name="lastName">&nbsp;&nbsp;
+				<input type="submit" id="icon01" value="V"></div> <br>
+			</form>
+			
+			<form th:action="@{/searchUserAccountA}" method="GET">
+				<div>Enter user address:</div>
+				<div><input type="text" name="id">&nbsp;&nbsp;
+				<input type="submit" id="icon01" value="V"></div> <br>
+			</form>
+			
+			<form th:action="@{/searchUserAccountA}" method="GET">
+				<div>Enter user account number:</div>
+				<div><input type="text" name="accountNumber">&nbsp;&nbsp;
+				<input type="submit" id="icon01" value="V"></div> <br>
+			</form>
+		</div>
+
+		<div id="list">
+			<table>
+				<tr id="table-heading">
+					<td>User ID</td>
+					<td>First name</td>
+					<td>Last name</td>
+					<td>Account number</td>
+					<td>DETAILS</td>
+					<td>EDIT</td>
+					<td>DELETE</td>
+				</tr>
+				<tr th:each="user : ${results}">
+					<td id="tb-center" th:text="${user.userAccountId}">100</td>
+					<td id="tb-left" th:text="${user.firstName}">first name</td>
+					<td id="tb-left" th:text="${user.lastName}">last name</td>
+					<td id="tb-center" th:text="${user.accountNumber}">1234567890</td>
+					<td id="tb-center"><a th:href="@{/userAccountDetailsA/{id}(id=${user.userAccountId})}"><button id="details">DETAILS</button></a></td>
+					<td id="tb-center"><a th:href="@{/editUserAccountA/{id}(id=${user.userAccountId})}"><button id="edit">EDIT</button></a></td>
+					<td id="tb-center"><a th:href="@{/deleteUserAccountA/{id}(id=${user.userAccountId})}"><button id="delete">DELETE</button></a></td>
+				</tr>
+			</table>
+		</div>
+	</section>
+</body>
+</html>

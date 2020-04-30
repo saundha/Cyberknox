@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>User Accounts</title>
+	<link rel="stylesheet" href="../../static/css/userAccountList.css" th:href="@{/css/userAccountList.css}">
+</head>
+<body>
+	<header th:replace="admin/administrator.html :: header">
+		<div class="container">
+			<div id="bank-title">
+				<a th:href="@{/}">Cyber Knox</a>
+			</div>
+			<div>
+				<ul id="header-list">
+					<a th:href="@{/}"><li id="home"><span id="icon02">I</span> Home</li></a>
+					<a th:href="@{/administrator}"><li id="admin"><span id="icon02">A</span> Enter Administrator Mode</li></a>
+				</ul>
+			</div>
+			<div id="log-sign-header">
+				<a th:href="@{/login}"><button>Login</button></a>
+				<a th:href="@{/signup}"><button>Sign up</button></a>
+			</div>
+		</div>
+	</header>
+	
+	<div id="table-container">
+		<table>
+			<tr id="table-heading">
+				<td>User ID</td>
+				<td>First name</td>
+				<td>Last name</td>
+				<td>Account number</td>
+				<td>DETAILS</td>
+				<td>EDIT</td>
+				<td>DELETE</td>
+			</tr>
+			<tr th:each="user : ${userAccounts}">
+				<td id="tb-center" th:text="${user.userAccountId}">100</td>
+				<td id="tb-left" th:text="${user.firstName}">first name</td>
+				<td id="tb-left" th:text="${user.lastName}">last name</td>
+				<td id="tb-center" th:text="${user.accountNumber}">1234567890</td>
+				<td id="tb-center"><a th:href="@{/userAccountDetailsA/{id}(id=${user.userAccountId})}"><button id="details">DETAILS</button></a></td>
+				<td id="tb-center"><a th:href="@{/editUserAccountA/{id}(id=${user.userAccountId})}"><button id="edit">EDIT</button></a></td>
+				<td id="tb-center"><a th:href="@{/deleteUserAccountA/{id}(id=${user.userAccountId})}"><button id="delete">DELETE</button></a></td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>

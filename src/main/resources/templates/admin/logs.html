@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>View All Logs</title>
+    <link rel="stylesheet" href="../../static/css/logs.css" th:href="@{/css/logs.css}">
+</head>
+<body>
+	<header th:replace="admin/administrator.html :: header">
+		<div class="container">
+			<div id="bank-title">
+				<a th:href="@{/}">Cyber Knox</a>
+			</div>
+			<div>
+				<ul id="header-list">
+					<a th:href="@{/}"><li id="home"><span id="icon02">I</span> Home</li></a>
+					<a th:href="@{/administrator}"><li id="admin"><span id="icon02">A</span> Enter Administrator Mode</li></a>
+				</ul>
+			</div>
+			<div id="log-sign-header">
+				<a th:href="@{/login}"><button>Login</button></a>
+				<a th:href="@{/signup}"><button>Sign up</button></a>
+			</div>
+		</div>
+    </header>
+	
+	<section>
+		<h1>Logs</h1>
+		<div>
+			<ul th:each="log : ${logList}">
+				<li th:text="${log}">logs</li>
+			</ul>
+		</div>
+		<div>
+			<a th:href="@{/clearLogsA}"><button>CLEAR</button></a>
+		</div>
+	</section>
+
+</body>
+</html>

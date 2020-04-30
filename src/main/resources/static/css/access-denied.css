@@ -1,0 +1,35 @@
+@import url('fonts.css');
+@import url('root.css');
+@import url('header.css');
+
+body {
+	background-image: linear-gradient(
+		135deg,
+	    var(--vivid-purple), 
+		var(--vivid-blue));
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+
+header { background-image: none; }
+
+#error-desc {
+	background-color: aliceblue;
+	padding: 50px;
+	width: 80%;
+	margin: 40px auto;
+	border: none;
+	border-radius: 20px;
+	font-size: 150%;
+	padding-left: 70px;
+}
+
+#error-desc h1 {
+	color: var(--vivid-red);
+	margin-bottom: 10px;
+}
+
+img {
+	float: right;
+	padding-right: 20px;
+}

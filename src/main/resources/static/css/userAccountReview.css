@@ -1,0 +1,10 @@
+@import url('header.css');
+@import url('fonts.css');
+@import url('root.css');
+
+body {
+	background-image: linear-gradient(
+		135deg,
+	    var(--vivid-purple), 
+		var(--vivid-blue));
+}

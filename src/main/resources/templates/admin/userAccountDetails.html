@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>User Account Details</title>
+	<link rel="stylesheet" href="../../static/css/userAccountDetails.css" th:href="@{/css/userAccountDetails.css}">
+</head>
+<body>
+	<header th:replace="admin/administrator.html :: header">
+		<div class="container">
+			<div id="bank-title">
+				<a th:href="@{/}">Cyber Knox</a>
+			</div>
+			<div>
+				<ul id="header-list">
+					<a th:href="@{/}"><li id="home"><span id="icon02">I</span> Home</li></a>
+					<a th:href="@{/administrator}"><li id="admin"><span id="icon02">A</span> Enter Administrator Mode</li></a>
+				</ul>
+			</div>
+			<div id="log-sign-header">
+				<a th:href="@{/login}"><button>Login</button></a>
+				<a th:href="@{/signup}"><button>Sign up</button></a>
+			</div>
+		</div>
+	</header>
+
+	<section>
+		<h1><span th:text="${userAccount.firstName} +' '+ ${userAccount.lastName}">full name</span></h1>
+		<div>
+			<a th:href="@{/editUserAccountA/{id}(id=${userAccount.userAccountId})}"><button id="edit" type="button">EDIT</button></a>
+			<a th:href="@{/deleteUserAccountA/{id}(id=${userAccount.userAccountId})}"><button id="delete" type="button">DELETE</button></a>
+		</div>
+		<div id="table-container">
+			<table>
+				<tr>
+					<td>Username: </td>
+					<td id="right" th:text="${user.username}">sample sample</td>
+				</tr>
+				<tr>
+					<td>Account number: </td>
+					<td id="right" th:text="${userAccount.accountNumber}">sample sample</td>
+				</tr>
+				<tr>
+					<td>Debit number: </td>
+					<td id="right" th:text="${debit.number}">sample sample</td>
+				</tr>
+				<tr>
+					<td>Credit number: </td>
+					<td id="right" th:text="${credit.number}">sample sample</td>
+				</tr>
+				<tr>
+					<td>First name: </td>
+					<td id="right" th:text="${userAccount.firstName}">sample sample</td>
+				</tr>
+				<tr>
+					<td>Last name: </td>
+					<td id="right" th:text="${userAccount.lastName}">sample sample</td>
+				</tr>
+				<tr>
+					<td>Address: </td>
+					<td id="right" th:text="${userAccount.address}">sample sample</td>
+				</tr>
+				<tr>
+					<td>Age (years): </td>
+					<td id="right" th:text="${userAccount.age}">sample sample</td>
+				</tr>
+				<tr>
+					<td>Date of birth: </td>
+					<td id="right" th:text="${userAccount.dateOfBirth}">sample sample</td>
+				</tr>
+				<tr>
+					<td>Gender: </td>
+					<td id="right" th:text="${userAccount.gender}">sample sample</td>
+				</tr>
+				<tr>
+					<td>Phone number: </td>
+					<td id="right" th:text="${userAccount.number}">sample sample</td>
+				</tr>
+		    	<tr>
+					<td>Email: </td>
+			    	<td id="right" th:text="${userAccount.email}">sample sample</td>
+				</tr>
+				<tr>
+					<td>SIN number: </td>
+					<td id="right" th:text="${userAccount.sinNumber}">sample sample</td>
+				</tr>
+				<tr>
+					<td>Phone number: </td>
+					<td id="right" th:text="${userAccount.number}">sample sample</td>
+				</tr>
+			</table>
+		</div>
+	</section>
+	
+</body>
+</html>

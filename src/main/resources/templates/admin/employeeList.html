@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Employees</title>
+	<link rel="stylesheet" href="../../static/css/employeeList.css" th:href="@{/css/employeeList.css}">
+</head>
+<body>
+	<header th:replace="admin/administrator.html :: header">
+		<div class="container">
+			<div id="bank-title">
+				<a th:href="@{/}">Cyber Knox</a>
+			</div>
+			<div>
+				<ul id="header-list">
+					<a th:href="@{/}"><li id="home"><span id="icon02">I</span> Home</li></a>
+					<a th:href="@{/administrator}"><li id="admin"><span id="icon02">A</span> Enter Administrator Mode</li></a>
+				</ul>
+			</div>
+			<div id="log-sign-header">
+				<a th:href="@{/login}"><button>Login</button></a>
+				<a th:href="@{/signup}"><button>Sign up</button></a>
+			</div>
+		</div>
+	</header>
+
+	<section>
+		<div id="table-container">
+		<table>
+			<tr id="table-heading">
+				<td>Employee ID</td>
+				<td>First Name</td>
+				<td>Last Name</td>
+				<td>Start Date</td>
+				<td>EDIT</td>
+				<td>DELETE</td>
+			</tr>
+			<tr th:each="employee : ${employees}">
+				<td id="tb-center" th:text="${employee.employeeId}">100</td>
+				<td id="tb-left" th:text="${employee.firstName}">first name</td>
+				<td id="tb-left" th:text="${employee.lastName}">last name</td>
+				<td id="tb-center" th:text="${employee.startDate}">1234567890</td>
+				<td id="tb-center"><a href="#" th:href="@{/editEmployeeA/{id}(id=${employee.employeeId})}"><button id="edit">EDIT</button></a></td>
+				<td id="tb-center"><a href="#" th:href="@{/deleteEmployeeA/{id}(id=${employee.employeeId})}"><button id="delete">DELETE</button></a></td>
+			</tr>
+		</table>
+	</div>
+	</section>
+	
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Account Information</title>
+	<link rel="stylesheet" href="../../static/css/account.css" th:href="@{/css/account.css}">
+	<script src="../../static/js/account.js" th:src="@{/js/account.js}"></script>
+</head>
+<body>
+	<header th:fragment="header">
+		<div class="container">
+			<div id="bank-title">
+				<a th:href="@{/}">Cyber Knox</a>
+			</div>
+			<div>
+				<ul id="header-list">					
+					<a th:href="@{logout}"><li><span id="icon02">J</span> Logout</li></a>
+					<a th:href="@{/}"><li id="home"><span id="icon02">I</span> Home</li></a>
+					<a th:href="@{/account}"><li id="account"><span id="icon02">h</span> Account</li></a>
+					<a th:href="@{/userProfile}"><li id="profile"><span id="icon01">s</span> Profile</li></a>
+				</ul>
+			</div>
+			<div id="log-sign-header">
+				<a th:href="@{/login.html}"><button>Login</button></a>
+				<a th:href="@{/signup.html}"><button>Sign up</button></a>
+			</div>
+		</div>
+	</header>
+
+	<section> 
+		<div id="debit">
+			<div id="debit-container">
+				Debit card - <span th:text="${debit.getNumber()}">1234 5678 9011 1111</span>
+				<button onclick="changeAction('debit')" id="show" value="show">Show</button>
+			</div>
+			<div id="debit-info">
+				<button onclick="document.getElementById('debit-info').style.display='none'" id="hide">Hide</button>
+				<span id="balance">Balance : $<span th:text="${debit.getBalance()}">999</span></span> <br>
+				<button class="feature-btn" onclick="interac('open')" id="interac">INTERAC E-Send</button>
+				<button class="feature-btn" onclick="depositFunds('open')">Deposit</button>
+				<button class="feature-btn" onclick="withdrawFunds('open')">Withdraw</button>
+				<ol id="transactions">
+					<li id="transaction" th:each="transaction : ${transactions}" th:text="${transaction}"> this is transaction</li> <br>
+				</ol>
+			</div>
+		</div>
+
+		<div id="credit">
+			<div id="credit-container">
+				Credit card - <span th:text="${credit.getNumber()}">1234 5678 9011 0000</span>
+				<button onclick="changeAction('credit')" id="show">Show</button>
+			</div>
+			<div id="credit-info">
+				<button onclick="document.getElementById('credit-info').style.display='none'" id="hide">Hide</button>
+				<span id="balance">Balance : $<span th:text="${credit.getBalance()}">999</span></span> <br>
+				<button class="feature-btn" onclick="depositFunds('open')">Deposit</button>
+				<ol id="transactions">
+				</ol>
+			</div>
+		</div>
+	</section>
+
+	<div id="interac-popup">
+		<div id="interac-container">
+			<h1>INTERAC E-SEND</h1>
+			<form action="/processInterac" method="GET" name="interacForm">
+				<table id="form-table">
+					<tr>
+						<td id="txt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email :</td><td></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="reciever"></td><td></td>
+					</tr>
+					<tr>
+						<td id="txt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ammount :</td><td></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="amount"></td><td></td>
+					</tr>
+				</table>
+				<div>
+					<button type="button" onclick="interac('close')">CANCEL</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="submit" value="SEND">
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="deposit-popup">
+		<div id="deposit-container">
+			<h1>DEPOSIT FUNDS</h1>
+			<form action="/processDeposit" method="post" name="depositForm">
+				<div>
+					Enter Ammount: <br>
+					<input type="text" name="deposit">
+				</div>	
+				<div>
+					<button type="button" onclick="depositFunds('close')">CANCEL</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="submit" value="DEPOSIT">
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div id="withdraw-popup">
+		<div id="withdraw-container">
+			<h1>WITHDRAW FUNDS</h1>
+			<form action="/processWithdraw" method="post" name="withdrawForm">
+				<div>
+					Enter Ammount: <br>
+					<input type="text" name="withdraw">
+				</div>	
+				<div>
+					<button type="button" onclick="withdrawFunds('close')">CANCEL</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="submit" value="WITHDRAW">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

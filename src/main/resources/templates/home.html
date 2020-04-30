@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Welcome</title>
+    <link rel="stylesheet" href="../static/css/home.css" th:href="@{/css/home.css}">
+</head>
+<body>
+	<header th:fragment="homeheader">
+		<div class="container">
+			<div id="bank-title">
+				<a th:href="@{/}">Cyber Knox</a>
+			</div>
+			<div>
+				<ul id="header-list">					
+					<a th:href="@{logout}"><li><span id="icon02">J</span> Logout</li></a>
+					<a th:href="@{/}"><li id="home" class="noHover"><span id="icon02">I</span> Home</li></a>
+					<a th:href="@{/employee}"><li id="employee"><span id="icon01">s</span> Employee Mode</li></a>
+					<a th:href="@{administrator}"><li id="admin"><span id="icon02">A</span> Administrator Mode</li></a>
+				</ul>
+			</div>
+			<div id="log-sign-header">
+				<a th:href="@{/login}"><button>Login</button></a>
+				<a th:href="@{/signup}"><button>Sign up</button></a>
+			</div>
+		</div>
+	</header>
+
+	<section>
+		<p id="greet"><span>Welcome</span> to our banking app!</p>
+
+		<div id="text-container">
+			<span><a th:href="@{/account}">Login as User</a> to access your account or...</span> <br>
+			<span><a th:href="@{/signup}">Sign up</a> & get yourself started with our app!</span> <br>
+			<span><a th:href="@{generate}">Generate</a> some dummy records to test our application</span> <br>
+		</div>
+	</section>
+
+</body>
+</html>

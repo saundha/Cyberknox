@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>FORBIDDEN</title>
+    <link rel="stylesheet" href="../static/css/access-denied.css" th:href="@{/css/access-denied.css}">
+</head>
+<body>
+	<header th:replace="home.html :: homeheader">
+		<div class="container">
+			<div id="bank-title">
+				<span>Bank Name</span>
+			</div>
+			<div>
+				<ul id="header-list">
+					<a href="/home.html" th:href="@{/}"><li><span id="icon02">I</span> Home</li></a>
+					<a href="/account.html" th:href="@{/account}"><li><span id="icon02">h</span> Account</li></a>
+					<a href="/search.html" th:href="@{/search}"><li><span id="icon01">V</span> Search</li></a>
+					<a href="/updates.html" th:href="@{/updates}"><li><span id="icon2">E</span> Updates</li></a>
+					<a href="/profile.html" th:href="@{/profile}"><li><span id="icon01">s</span> Profile</li></a>
+					<a href="/settings.html" th:href="@{/settings}"><li><span id="icon01">T</span> Settings</li></a>
+				</ul>
+			</div>
+			<div id="log-sign-header">
+				<a href="@{/login.html}"><button>Login</button></a>
+				<a href="@{/signup.html}"><button>Sign up</button></a>
+			</div>
+		</div>
+	</header>
+
+	<div id="error-desc">
+		<img src="../static/img/icons/lock.png" th:src="@{/img/icons/lock.png}" height="100px" width="100px">
+		<h1>ACCESS DENIED!</h1>
+	    <p>Unfortunately, you are prohibited to access this page</p>
+	</div>
+</body>
+</html>

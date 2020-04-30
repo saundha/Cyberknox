@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="../static/css/login.css" th:href="@{/css/login.css}">
+</head>
+<body>
+	<header th:replace="home.html :: homeheader">
+		<!-- DELETE AFTER -->
+		<div class="container">
+			<div id="bank-title">
+				<span>Bank Name</span>
+			</div>
+			<div>
+				<ul id="header-list">
+					<a href="/home.html" th:href="@{/}"><li><span id="icon02">I</span> Home</li></a>
+					<a href="/administrator.html" th:href="@{/administrator}"><li><span id="icon02">A</span> Enter Administrator Mode</li></a>
+				</ul>
+			</div>
+			<div id="log-sign-header">
+				<a href="@{/login.html}"><button>Login</button></a>
+				<a href="@{/signup.html}"><button>Sign up</button></a>
+			</div>
+		</div>
+	</header>
+
+	<section>
+		<div id="info">Login with your bank account username</div>
+
+		<form th:action="@{/login}" method="POST" id="login-form">
+			<div th:if="${param.error}">
+				<div class="alert " id="error">
+					Invalid username or password!
+				</div>
+			</div>
+			<div th:if="${param.logout}" id="logout">
+				<div class="alert ">
+					You have been logged out!
+				</div>
+			</div> 
+			<div id="username-container">
+				<input type="text" id="username" name="username" autofocus="autofocus" placeholder="Username">
+			</div>
+			<div id="password-container"> <br>
+				<input type="password" id="password" name="password" placeholder="Password">
+			</div>
+			<div id="submit-container"> <br>
+				 <input type="submit" name="login-submit" id="login-submit" value="Login">
+			</div>
+			<div id="form-bottom-text">
+				Don't have an account?<br><a href="/signup.html" th:href="@{/signup}">Create One Now!</a>
+			</div>
+		</form>
+	</section>
+</body>
+</html>

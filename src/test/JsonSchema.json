@@ -1,0 +1,44 @@
+{
+  "type" : "object",
+  "properties" : {
+    "userAccountId" : {
+      "type" : "integer"
+    },
+    "dateOfBirth" : {
+      "type" : "string"
+    },
+    "address" : {
+      "type" : "string"
+    },
+    "gender" : {
+      "type" : "string"
+    },
+    "number" : {
+      "type" : "string"
+    },
+    "email" : {
+      "type" : "string"
+    },
+    "age" : {
+      "type" : "string"
+    },
+    "debitCardId" : {
+      "type" : "integer"
+    },
+    "creditCardId" : {
+      "type" : "integer"
+    },
+    "firstName" : {
+      "type" : "string"
+    },
+    "lastName" : {
+      "type" : "string"
+    },
+    "sinNumber" : {
+      "type" : "string"
+    },
+    "accountNumber" : {
+      "type" : "string"
+    }
+  }
+}

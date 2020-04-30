@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>My Profile</title>
+	<link rel="stylesheet" href="../../static/css/userProfile.css" th:href="@{/css/userProfile.css}">
+</head>
+<body>
+	<header th:fragment="header">
+		<div class="container">
+			<div id="bank-title">
+				<a th:href="@{/}">Cyber Knox</a>
+			</div>
+			<div>
+				<ul id="header-list">
+					<a th:href="@{/}"><li id="home"><span id="icon02">I</span> Home</li></a>
+					<a th:href="@{/account}"><li id="address"><span id="icon02">h</span> Account</li></a>
+					<a th:href="@{/profile}"><li id="profile" class="noHover"><span id="icon01">s</span> Profile</li></a>
+				</ul>
+			</div>
+			<div id="log-sign-header">
+				<a th:href="@{/login.html}"><button>Login</button></a>
+				<a th:href="@{/signup.html}"><button>Sign up</button></a>
+			</div>
+		</div>
+	</header>
+
+	<section>
+		<div id="after-section">
+			<div>
+				<h1 th:text="'Hello ' + ${fullName}">Hello User</h1>
+			</div>
+
+			<div id="details">
+				<table>
+					<tr>
+						<td>Username: </td>
+						<td id="right" th:text="${user.username}">sample sample</td>
+					</tr>
+					<tr>
+						<td>Account number: </td>
+						<td id="right" th:text="${userAccount.accountNumber}">sample sample</td>
+					</tr>
+					<tr>
+						<td>Debit number: </td>
+						<td id="right" th:text="${debit.number}">sample sample</td>
+					</tr>
+					<tr>
+						<td>Credit number: </td>
+						<td id="right" th:text="${credit.number}">sample sample</td>
+					</tr>
+					<tr>
+						<td>First name: </td>
+						<td id="right" th:text="${userAccount.firstName}">sample sample</td>
+					</tr>
+					<tr>
+						<td>Last name: </td>
+						<td id="right" th:text="${userAccount.lastName}">sample sample</td>
+					</tr>
+					<tr>
+						<td>Address: </td>
+						<td id="right" th:text="${userAccount.address}">sample sample</td>
+					</tr>
+					<tr>
+						<td>Age (years): </td>
+						<td id="right" th:text="${userAccount.age}">sample sample</td>
+					</tr>
+					<tr>
+						<td>Date of birth: </td>
+						<td id="right" th:text="${userAccount.dateOfBirth}">sample sample</td>
+					</tr>
+					<tr>
+						<td>Gender: </td>
+						<td id="right" th:text="${userAccount.gender}">sample sample</td>
+					</tr>
+					<tr>
+						<td>Phone number: </td>
+						<td id="right" th:text="${userAccount.number}">sample sample</td>
+					</tr>
+					<tr>
+						<td>Email: </td>
+						<td id="right" th:text="${userAccount.email}">sample sample</td>
+					</tr>
+					<tr>
+						<td>SIN number: </td>
+						<td id="right" th:text="${userAccount.sinNumber}">sample sample</td>
+					</tr>
+					<tr>
+						<td>Phone number: </td>
+						<td id="right" th:text="${userAccount.number}">sample sample</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</section>
+
+</body>
+</html>
